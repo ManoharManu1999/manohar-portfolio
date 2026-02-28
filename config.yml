@@ -1,0 +1,8 @@
+# Configuration file for the portfolio project
+# Add any custom settings below
+
+site_name: "Manohar's Portfolio"
+author: "Manohar"
+description: "A personal portfolio website built with HTML, CSS, and JavaScript."
+
+# Add additional configuration values as needed
