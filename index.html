@@ -55,12 +55,16 @@
     <main>
         <!-- Hero -->
         <section id="hero" class="hero-section">
-            <div class="hero-content">
-                <h1>Turning Raw Data into Actionable Business Intelligence</h1>
-                <p class="status">🟢 Currently seeking opportunities</p>
-                <div class="hero-ctas">
-                    <a href="#projects" class="btn">View Projects</a>
-                    <a href="assets/Manohar_K_Resume.pdf" class="btn btn-secondary" target="_blank" rel="noopener">Download Resume</a>
+            <div class="hero-container">
+                <img src="images/My-Profile-Pic.png" alt="Manohar K." class="profile-img">
+                <div class="hero-content">
+                    <p class="hero-label">Data Analyst | SQL | Power BI | Python</p>
+                    <h1>Manohar K.</h1>
+                    <p>Turning data into actionable business insights with analytics, visualization and BI engineering.</p>
+                    <div class="hero-ctas">
+                        <a href="#projects" class="btn">View Projects</a>
+                        <a href="assets/Manohar_K_Resume.pdf" class="btn btn-secondary" target="_blank" rel="noopener">Download Resume</a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -79,90 +83,73 @@
         <!-- Skills -->
         <section id="skills" class="section">
             <h2>Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Databases &amp; SQL</h3>
-                    <ul>
-                        <li>SQL Server</li>
-                        <li>PostgreSQL</li>
-                        <li>MySQL</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Programming</h3>
-                    <ul>
-                        <li>SQL (Joins, CTEs, Window Functions)</li>
-                        <li>Python</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Data Analysis</h3>
-                    <ul>
-                        <li>EDA</li>
-                        <li>Data Cleaning</li>
-                        <li>ETL</li>
-                        <li>Data Validation</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Visualization</h3>
-                    <ul>
-                        <li>Power BI</li>
-                        <li>Matplotlib</li>
-                        <li>Seaborn</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Tools</h3>
-                    <ul>
-                        <li>GitHub</li>
-                        <li>Excel</li>
-                        <li>Jupyter Notebook</li>
-                        <li>DBeaver</li>
-                    </ul>
-                </div>
+            <div class="skill-badges">
+                <span class="skill-badge">SQL</span>
+                <span class="skill-badge">PostgreSQL</span>
+                <span class="skill-badge">SQL Server</span>
+                <span class="skill-badge">Python</span>
+                <span class="skill-badge">Power BI</span>
+                <span class="skill-badge">Excel</span>
+                <span class="skill-badge">Pandas</span>
+                <span class="skill-badge">Matplotlib</span>
+                <span class="skill-badge">Seaborn</span>
+                <span class="skill-badge">GitHub</span>
+                <span class="skill-badge">DBeaver</span>
+                <span class="skill-badge">Jupyter Notebook</span>
             </div>
         </section>
 
         <!-- Projects -->
         <section id="projects" class="section">
-            <h2>Projects</h2>
+            <h2>Featured Projects</h2>
             <div class="projects-grid">
-                <!-- card 1 -->
                 <div class="project-card">
-                    <h3>End-to-End Data Warehouse &amp; Analytics</h3>
-                    <p>Designed and built a full data warehouse, automated ETL pipelines and delivered executive reports.</p>
-                    <p><strong>Tools:</strong> SQL Server, SSIS, Power BI</p>
-                    <p><strong>Techniques:</strong> Data modeling, transformation, reporting</p>
-                    <p><strong>Impact:</strong> Reduced report generation time by 70%.</p>
-                    <a href="https://github.com/<your-username>/data-warehouse-analytics" target="_blank" rel="noopener">GitHub Repo</a>
+                    <img src="images/powerbi-dashboard.png" alt="Data Warehouse Dashboard" class="project-image">
+                    <div class="project-content">
+                        <h3>Data Warehouse & Analytics</h3>
+                        <p>Built a scalable warehouse with ETL pipelines and executive reporting layer.</p>
+                        <div class="project-tech">SQL Server • SSIS • Power BI</div>
+                        <div class="project-actions">
+                            <a href="https://github.com/<your-username>/data-warehouse-analytics" class="btn btn-small" target="_blank" rel="noopener">GitHub</a>
+                            <a href="#" class="btn btn-outline btn-small">View Project</a>
+                        </div>
+                    </div>
                 </div>
-                <!-- card 2 -->
                 <div class="project-card">
-                    <h3>Maven Movies Acquisition Due Diligence</h3>
-                    <p>Conducted a BI-driven analysis to support acquisition decisions for a movie catalog.</p>
-                    <p><strong>Tools:</strong> SQL, Excel, Power BI</p>
-                    <p><strong>Techniques:</strong> KPI calculation, storytelling dashboards</p>
-                    <p><strong>Impact:</strong> Identified $1.2M potential value in underutilized titles.</p>
-                    <a href="https://github.com/<your-username>/maven-movies-due-diligence" target="_blank" rel="noopener">GitHub Repo</a>
+                    <img src="images/sales-analysis.png" alt="Movies Acquisition Analysis" class="project-image">
+                    <div class="project-content">
+                        <h3>Maven Movies Due Diligence</h3>
+                        <p>Data-driven decision engine for catalog acquisition and revenue optimization.</p>
+                        <div class="project-tech">SQL • Excel • Power BI</div>
+                        <div class="project-actions">
+                            <a href="https://github.com/<your-username>/maven-movies-due-diligence" class="btn btn-small" target="_blank" rel="noopener">GitHub</a>
+                            <a href="#" class="btn btn-outline btn-small">View Project</a>
+                        </div>
+                    </div>
                 </div>
-                <!-- card 3 -->
                 <div class="project-card">
-                    <h3>PAN Number Data Quality Validation</h3>
-                    <p>Built SQL-driven validation routines to clean and verify PAN number datasets.</p>
-                    <p><strong>Tools:</strong> SQL Server, T-SQL</p>
-                    <p><strong>Techniques:</strong> Data validation, compliance checks</p>
-                    <p><strong>Impact:</strong> Improved data accuracy by 99.8%.</p>
-                    <a href="https://github.com/<your-username>/pan-data-validation" target="_blank" rel="noopener">GitHub Repo</a>
+                    <img src="images/sql-project.png" alt="PAN Data Quality Validation" class="project-image">
+                    <div class="project-content">
+                        <h3>PAN Data Quality Validation</h3>
+                        <p>Automated SQL validation workflows to achieve 99.8% data accuracy.</p>
+                        <div class="project-tech">SQL Server • T-SQL</div>
+                        <div class="project-actions">
+                            <a href="https://github.com/<your-username>/pan-data-validation" class="btn btn-small" target="_blank" rel="noopener">GitHub</a>
+                            <a href="#" class="btn btn-outline btn-small">View Project</a>
+                        </div>
+                    </div>
                 </div>
-                <!-- card 4 -->
                 <div class="project-card">
-                    <h3>Digital Music Store Exploratory Analysis</h3>
-                    <p>Conducted exploratory analysis on sales and user behavior data.</p>
-                    <p><strong>Tools:</strong> PostgreSQL, DBeaver, Python</p>
-                    <p><strong>Techniques:</strong> EDA, trend analysis</p>
-                    <p><strong>Impact:</strong> Revealed key growth segments contributing to 25% increase in sales.</p>
-                    <a href="https://github.com/<your-username>/music-store-eda" target="_blank" rel="noopener">GitHub Repo</a>
+                    <img src="images/hotel-analysis.png" alt="Digital Music Store Analysis" class="project-image">
+                    <div class="project-content">
+                        <h3>Digital Music Store EDA</h3>
+                        <p>Analyzed sales and behavior patterns to highlight $4M growth opportunities.</p>
+                        <div class="project-tech">PostgreSQL • Python • DBeaver</div>
+                        <div class="project-actions">
+                            <a href="https://github.com/<your-username>/music-store-eda" class="btn btn-small" target="_blank" rel="noopener">GitHub</a>
+                            <a href="#" class="btn btn-outline btn-small">View Project</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
