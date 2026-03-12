@@ -18,35 +18,33 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Dark mode toggle
-const toggle = document.getElementById('dark-mode-toggle');
-const root = document.documentElement;
+// Theme toggle
+const themeToggle = document.getElementById('theme-toggle');
 
-function setDarkMode(on) {
-    if (on) {
-        document.body.classList.add('dark');
-        localStorage.setItem('darkMode', 'enabled');
-        toggle.textContent = '☀️';
+function applyTheme(isLight) {
+    if (isLight) {
+        document.body.classList.add('light-mode');
+        themeToggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
+        localStorage.setItem('theme', 'light');
     } else {
-        document.body.classList.remove('dark');
-        localStorage.setItem('darkMode', 'disabled');
-        toggle.textContent = '🌙';
+        document.body.classList.remove('light-mode');
+        themeToggle.innerHTML = '<i class="fa-solid fa-moon"></i>';
+        localStorage.setItem('theme', 'dark');
     }
 }
 
-// initialize from preference or system
-const saved = localStorage.getItem('darkMode');
-if (saved === 'enabled') {
-    setDarkMode(true);
-} else if (saved === 'disabled') {
-    setDarkMode(false);
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'light') {
+    applyTheme(true);
+} else if (savedTheme === 'dark') {
+    applyTheme(false);
 } else {
-    // follow system
-    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    setDarkMode(prefersDark);
+    const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+    applyTheme(prefersLight);
 }
 
-toggle.addEventListener('click', () => {
-    const isDark = document.body.classList.contains('dark');
-    setDarkMode(!isDark);
+themeToggle.addEventListener('click', () => {
+    const isLight = document.body.classList.contains('light-mode');
+    applyTheme(!isLight);
 });
+

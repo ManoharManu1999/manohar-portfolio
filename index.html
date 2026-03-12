@@ -36,6 +36,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <header id="header">
@@ -48,7 +49,7 @@
                 <li><a href="#certifications">Certifications</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <button id="dark-mode-toggle" aria-label="Toggle dark mode">🌙</button>
+            <button id="theme-toggle" aria-label="Toggle theme"><i class="fa-solid fa-moon"></i></button>
         </nav>
     </header>
 
@@ -58,7 +59,7 @@
             <div class="hero-container">
                 <img src="images/My-Profile-Pic.png" alt="Manohar K." class="profile-img">
                 <div class="hero-content">
-                    <p class="hero-label">Data Analyst | SQL | Power BI | Python</p>
+                    <p class="hero-label">Data Analyst | SQL | Power BI | Python | Data Visualization</p>
                     <h1>Manohar K.</h1>
                     <p>Turning data into actionable business insights with analytics, visualization and BI engineering.</p>
                     <div class="hero-ctas">
@@ -85,17 +86,17 @@
             <h2>Skills</h2>
             <div class="skill-badges">
                 <span class="skill-badge">SQL</span>
-                <span class="skill-badge">PostgreSQL</span>
-                <span class="skill-badge">SQL Server</span>
                 <span class="skill-badge">Python</span>
                 <span class="skill-badge">Power BI</span>
+                <span class="skill-badge">PostgreSQL</span>
                 <span class="skill-badge">Excel</span>
-                <span class="skill-badge">Pandas</span>
-                <span class="skill-badge">Matplotlib</span>
-                <span class="skill-badge">Seaborn</span>
                 <span class="skill-badge">GitHub</span>
-                <span class="skill-badge">DBeaver</span>
-                <span class="skill-badge">Jupyter Notebook</span>
+            </div>
+            <div class="skill-bars">
+                <div class="skill-bar"><p>SQL</p><div class="bar"><div class="progress sql"></div></div></div>
+                <div class="skill-bar"><p>Python</p><div class="bar"><div class="progress python"></div></div></div>
+                <div class="skill-bar"><p>Power BI</p><div class="bar"><div class="progress powerbi"></div></div></div>
+                <div class="skill-bar"><p>Data Visualization</p><div class="bar"><div class="progress viz"></div></div></div>
             </div>
         </section>
 
@@ -104,7 +105,7 @@
             <h2>Featured Projects</h2>
             <div class="projects-grid">
                 <div class="project-card">
-                    <img src="images/powerbi-dashboard.png" alt="Data Warehouse Dashboard" class="project-image">
+                    <img src="images/project1.png" alt="Data Warehouse Dashboard" class="project-image">
                     <div class="project-content">
                         <h3>Data Warehouse & Analytics</h3>
                         <p>Built a scalable warehouse with ETL pipelines and executive reporting layer.</p>
@@ -116,7 +117,7 @@
                     </div>
                 </div>
                 <div class="project-card">
-                    <img src="images/sales-analysis.png" alt="Movies Acquisition Analysis" class="project-image">
+                    <img src="images/project2.png" alt="Movies Acquisition Analysis" class="project-image">
                     <div class="project-content">
                         <h3>Maven Movies Due Diligence</h3>
                         <p>Data-driven decision engine for catalog acquisition and revenue optimization.</p>
@@ -128,7 +129,7 @@
                     </div>
                 </div>
                 <div class="project-card">
-                    <img src="images/sql-project.png" alt="PAN Data Quality Validation" class="project-image">
+                    <img src="images/project3.png" alt="PAN Data Quality Validation" class="project-image">
                     <div class="project-content">
                         <h3>PAN Data Quality Validation</h3>
                         <p>Automated SQL validation workflows to achieve 99.8% data accuracy.</p>
@@ -140,7 +141,7 @@
                     </div>
                 </div>
                 <div class="project-card">
-                    <img src="images/hotel-analysis.png" alt="Digital Music Store Analysis" class="project-image">
+                    <img src="images/project4.png" alt="Digital Music Store Analysis" class="project-image">
                     <div class="project-content">
                         <h3>Digital Music Store EDA</h3>
                         <p>Analyzed sales and behavior patterns to highlight $4M growth opportunities.</p>
@@ -157,12 +158,20 @@
         <!-- Certifications -->
         <section id="certifications" class="section">
             <h2>Certifications &amp; Learning</h2>
-            <ul class="cert-list">
-                <li>Data Analyst Professional Certificate – Coursera</li>
-                <li>SQL for Data Science – edX</li>
-                <li>Power BI Data Analyst – Microsoft</li>
-                <li>Ongoing: Advanced Python for Data Analysis</li>
-            </ul>
+            <div class="cert-cards">
+                <div class="cert">Coursera – Data Analyst Professional Certificate</div>
+                <div class="cert">edX – SQL for Data Science</div>
+                <div class="cert">Microsoft – Power BI Data Analyst</div>
+                <div class="cert">Ongoing: Advanced Python for Data Analysis</div>
+            </div>
+        </section>
+
+        <!-- GitHub Stats -->
+        <section id="github-stats" class="section">
+            <h2>GitHub Stats</h2>
+            <div class="github-stats-wrap">
+                <img src="https://github-readme-stats.vercel.app/api?username=YOUR_USERNAME&show_icons=true&theme=tokyonight" alt="GitHub Stats" class="github-stats-img">
+            </div>
         </section>
 
         <!-- Contact -->
@@ -170,9 +179,9 @@
             <h2>Contact</h2>
             <p>I'm open to new opportunities and collaborations. Let's connect!</p>
             <div class="contact-icons">
-                <a href="https://linkedin.com/in/<your-profile>" target="_blank" rel="noopener" aria-label="LinkedIn">🔗</a>
-                <a href="https://github.com/<your-username>" target="_blank" rel="noopener" aria-label="GitHub">🐙</a>
-                <a href="mailto:your.email@example.com" aria-label="Email">✉️</a>
+                <a href="https://linkedin.com/in/<your-profile>" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/<your-username>" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="mailto:your.email@example.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
             </div>
         </section>
     </main>
