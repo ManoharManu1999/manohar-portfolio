@@ -1,15 +1,23 @@
-// Smooth scroll for internal links
-const navLinks = document.querySelectorAll('.nav-links a');
-navLinks.forEach(link => {
+document.addEventListener("DOMContentLoaded", () => {
+
+/* ===============================
+   Smooth Scroll Navigation
+================================ */
+
+document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', e => {
         e.preventDefault();
-        const targetId = link.getAttribute('href');
-        document.querySelector(targetId).scrollIntoView({ behavior: 'smooth' });
+        const target = document.querySelector(link.getAttribute('href'));
+        target.scrollIntoView({ behavior: 'smooth' });
     });
 });
 
-// Header background change on scroll
+/* ===============================
+   Header Scroll Effect
+================================ */
+
 const header = document.getElementById('header');
+
 window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
         header.classList.add('scrolled');
@@ -18,50 +26,85 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Theme toggle
+/* ===============================
+   Theme Toggle
+================================ */
+
 const themeToggle = document.getElementById('theme-toggle');
 
-function applyTheme(isLight) {
-    if (isLight) {
+function applyTheme(isLight){
+
+    if(isLight){
         document.body.classList.add('light-mode');
         themeToggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
-        localStorage.setItem('theme', 'light');
-    } else {
+        localStorage.setItem('theme','light');
+    }
+    else{
         document.body.classList.remove('light-mode');
         themeToggle.innerHTML = '<i class="fa-solid fa-moon"></i>';
-        localStorage.setItem('theme', 'dark');
+        localStorage.setItem('theme','dark');
     }
+
 }
 
 const savedTheme = localStorage.getItem('theme');
-if (savedTheme === 'light') {
+
+if(savedTheme === 'light'){
     applyTheme(true);
-} else if (savedTheme === 'dark') {
+}
+else if(savedTheme === 'dark'){
     applyTheme(false);
-} else {
+}
+else{
     const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
     applyTheme(prefersLight);
 }
 
 themeToggle.addEventListener('click', () => {
+
     const isLight = document.body.classList.contains('light-mode');
     applyTheme(!isLight);
+
 });
 
-const reveals = document.querySelectorAll('.section');
+/* ===============================
+   Scroll Reveal Animation
+================================ */
 
-window.addEventListener('scroll', () => {
-  reveals.forEach(section => {
-    const top = section.getBoundingClientRect().top;
-    if (top < window.innerHeight - 100) {
-      section.classList.add('active');
-    }
-  });
-});
+const reveals = document.querySelectorAll('.reveal');
+
+function revealSections(){
+
+    reveals.forEach(section => {
+
+        const top = section.getBoundingClientRect().top;
+
+        if(top < window.innerHeight - 100){
+            section.classList.add('active');
+        }
+
+    });
+
+}
+
+window.addEventListener('scroll', revealSections);
+
+/* ===============================
+   Skill Bar Animation
+================================ */
 
 window.addEventListener("load", () => {
-document.querySelector(".sql").style.width="90%";
-document.querySelector(".python").style.width="80%";
-document.querySelector(".powerbi").style.width="75%";
-document.querySelector(".viz").style.width="85%";
+
+const sql = document.querySelector(".sql");
+const python = document.querySelector(".python");
+const powerbi = document.querySelector(".powerbi");
+const viz = document.querySelector(".viz");
+
+if(sql) sql.style.width = "90%";
+if(python) python.style.width = "80%";
+if(powerbi) powerbi.style.width = "75%";
+if(viz) viz.style.width = "85%";
+
+});
+
 });
