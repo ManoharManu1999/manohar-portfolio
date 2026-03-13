@@ -11,8 +11,10 @@
     <meta property="og:title" content="Manohar K. - Data Analyst Portfolio" />
     <meta property="og:description" content="Professional portfolio of a Data Analyst / Data Engineer from Bengaluru specializing in SQL, Python, Power BI and business intelligence." />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://<your-github-username>.github.io/" />
+    <meta property="og:url" content="https://manoharmanu1999.github.io/" />
     <meta property="og:image" content="assets/og-image.png" />
+    <link rel="icon" href="images/My-Profile-Pic.png">
+    <link rel="canonical" href="https://manoharmanu1999.github.io/">
 
     <!-- Schema.org markup -->
     <script type="application/ld+json">
@@ -21,7 +23,7 @@
       "@type": "Person",
       "name": "Manohar K.",
       "jobTitle": "Data Analyst / Data Engineer",
-      "url": "https://<your-github-username>.github.io/",
+      "url": "https://manoharmanu1999.github.io/",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Bengaluru",
@@ -40,7 +42,7 @@
 </head>
 <body>
     <header id="header">
-        <nav class="navbar">
+        <nav class="navbar" aria-label="Main Navigation">
             <div class="brand">MK</div>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
@@ -63,10 +65,14 @@
                     <h1>Manohar K.</h1>
                     <p>Data Analyst with 3+ years telecom operations experience.<br>
                        Specialized in SQL, Python, and Power BI for analyzing large datasets, building dashboards, and improving business processes through data-driven insights.</p>
+                    <p class="hero-location">
+                        📍 Bengaluru, India
+                    </p>
                     <div class="hero-ctas">
-                        <a href="#projects" class="btn">View Projects</a>
+                        <a href="#projects" class="btn-primary">View Projects</a>
                         <a href="assets/Manohar_K_Data_Analyst_Resume.pdf" class="btn btn-secondary" target="_blank" rel="noopener">Download Resume</a>
-                        <a href="https://www.linkedin.com/in/<your-profile>" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                        <a href="https://www.linkedin.com/in/manohark1999" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                        <a href="https://github.com/ManoharManu1999" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">GitHub</a>
                     </div>
                 </div>
             </div>
@@ -117,12 +123,76 @@
             </div>
         </section>
 
+        <section id="what-i-do" class="section">
+        
+            <h2>What I Do</h2>
+        
+            <div class="what-grid">
+        
+                <div class="what-card">
+                    <h3>Data Analysis</h3>
+                    <p>Explore datasets using SQL and Python to identify trends, anomalies, and business insights.</p>
+                </div>
+        
+                <div class="what-card">
+                    <h3>Data Visualization</h3>
+                    <p>Create interactive dashboards using Power BI to communicate insights clearly to stakeholders.</p>
+                </div>
+        
+                <div class="what-card">
+                    <h3>Data Engineering</h3>
+                    <p>Design ETL pipelines and data warehouse architectures for analytics-ready datasets.</p>
+                </div>
+        
+            </div>
+        
+        </section>
+        <section id="workflow" class="section">
+        
+            <h2>My Analytics Workflow</h2>
+        
+            <div class="workflow-grid">
+        
+                <div class="workflow-card">
+                    <h3>1. Data Collection</h3>
+                    <p>Gather datasets from databases, APIs, or CSV sources and ensure data completeness before analysis.</p>
+                </div>
+        
+                <div class="workflow-card">
+                    <h3>2. Data Cleaning</h3>
+                    <p>Handle missing values, remove duplicates, and standardize data formats using SQL and Python.</p>
+                </div>
+        
+                <div class="workflow-card">
+                    <h3>3. Exploratory Analysis</h3>
+                    <p>Analyze trends, correlations, and anomalies using Python, Pandas, and visualization tools.</p>
+                </div>
+        
+                <div class="workflow-card">
+                    <h3>4. Data Modeling</h3>
+                    <p>Structure datasets using dimensional modelling and SQL transformations for efficient analysis.</p>
+                </div>
+        
+                <div class="workflow-card">
+                    <h3>5. Visualization</h3>
+                    <p>Create dashboards in Power BI to communicate insights to stakeholders.</p>
+                </div>
+        
+                <div class="workflow-card">
+                    <h3>6. Business Insights</h3>
+                    <p>Translate data findings into actionable recommendations that support business decisions.</p>
+                </div>
+        
+            </div>
+        
+        </section>
+
         <!-- Projects -->
         <section id="projects" class="section">
             <h2>Featured Projects</h2>
             <div class="featured-projects-grid">
                 <div class="project-card project-card-large">
-                    <img src="images/Project1_Adventure_Works_Sales_Analysis_PowerBI_Dashboard.png" alt="Adventure Works Power BI Dashboard" class="project-image">
+                    <img src="images/Project1_Adventure_Works_Sales_Analysis_PowerBI_Dashboard.png" alt="Adventure Works Power BI Dashboard" class="project-image" loading="lazy">
                     <div class="project-content">
                         <h3>Adventure Works Power BI Dashboard</h3>
                         <p>Created a multi-page Power BI dashboard analysing KPIs, regional performance, product sales, and customer segments.</p>
@@ -134,7 +204,7 @@
                     </div>
                 </div>
                 <div class="project-card project-card-large">
-                    <img src="images/Project3_Data_Warehouse_Analytics.png" alt="SQL Server Data Warehouse Project" class="project-image">
+                    <img src="images/Project3_Data_Warehouse_Analytics.png" alt="SQL Server Data Warehouse Project" class="project-image" loading="lazy">
                     <div class="project-content">
                         <h3>SQL Server Data Warehouse Project</h3>
                         <p>Designed an end-to-end SQL Server data warehouse using Medallion Architecture with ETL pipelines and dimensional modelling.</p>
@@ -146,7 +216,7 @@
                     </div>
                 </div>
                 <div class="project-card project-card-large">
-                    <img src="images/Project2_Hotel_Booking_Data_Analysis.png" alt="AtliQ Hospitality Data Analysis" class="project-image">
+                    <img src="images/Project2_Hotel_Booking_Data_Analysis.png" alt="AtliQ Hospitality Data Analysis" class="project-image" loading="lazy">
                     <div class="project-content">
                         <h3>AtliQ Hospitality Data Analysis</h3>
                         <p>Performed exploratory data analysis on hotel booking data to uncover revenue trends and occupancy patterns.</p>
@@ -158,7 +228,7 @@
                     </div>
                 </div>
                 <div class="project-card project-card-large">
-                    <img src="images/Project4_Maven_MegaMart_Retail_Analysis_(Python).png" alt="Maven MegaMart Sales Analysis (Python)" class="project-image">
+                    <img src="images/Project4_Maven_MegaMart_Retail_Analysis_(Python).png" alt="Maven MegaMart Sales Analysis (Python)" class="project-image" loading="lazy">
                     <div class="project-content">
                         <h3>Maven MegaMart Sales Analysis (Python)</h3>
                         <p>Analysed millions of retail transactions to identify key revenue drivers and seasonal sales patterns.</p>
@@ -170,11 +240,59 @@
                     </div>
                 </div>
             </div>
+            <section id="insights" class="section">
+                <h2>Key Insights From My Projects</h2>
+            
+                <div class="insights-grid">
+            
+                    <div class="insight-card">
+                        <h3>Adventure Works Sales Dashboard</h3>
+                        <p>Identified top performing product categories contributing over 45% of total revenue and highlighted
+                            regional sales trends affecting quarterly growth.</p>
+                    </div>
+            
+                    <div class="insight-card">
+                        <h3>AtliQ Hospitality Analysis</h3>
+                        <p>Discovered cancellation spikes during peak booking periods and identified occupancy trends impacting
+                            revenue stability.</p>
+                    </div>
+            
+                    <div class="insight-card">
+                        <h3>Data Jobs Market Analysis</h3>
+                        <p>Analyzed job market data to identify the most in-demand skills and salary ranges for data analyst roles
+                            in 2024.</p>
+                    </div>
+                </div>
+            </section>
+
+                <section id="case-study" class="section">
+                
+                    <h2>Featured Case Study</h2>
+                
+                    <h3>Adventure Works Sales Dashboard</h3>
+                
+                    <p><strong>Problem:</strong> Business stakeholders lacked visibility into sales performance across regions and
+                        products.</p>
+                
+                    <p><strong>Approach:</strong> Built an interactive Power BI dashboard combining sales, customer, and product data.
+                    </p>
+                
+                    <p><strong>Insights:</strong></p>
+                
+                    <ul>
+                        <li>Top 3 product categories generated over 45% of revenue</li>
+                        <li>North America region contributed the highest profit margins</li>
+                        <li>Seasonal spikes identified in Q4 sales</li>
+                    </ul>
+                
+                    <p><strong>Impact:</strong> Enabled stakeholders to monitor performance and identify growth opportunities.</p>
+                
+                </section>
 
             <h2>Other Projects</h2>
             <div class="other-projects-grid">
                 <div class="project-card project-card-small">
-                    <img src="images/Project5_Python_US_Data_Job_Market_Analysis.png" alt="U.S. Data Analyst Job Trends" class="project-image">
+                    <img src="images/Project5_Python_US_Data_Job_Market_Analysis.png" alt="U.S. Data Analyst Job Trends" class="project-image" loading="lazy">
                     <div class="project-content">
                         <h3>U.S. Data Analyst Job Trends (Python)</h3>
                         <p>Analysed job postings to identify in-demand skills, salary ranges, and hiring trends in the data analyst market.</p>
@@ -186,7 +304,7 @@
                     </div>
                 </div>
                 <div class="project-card project-card-small">
-                    <img src="images/Project6_SQL_Music_Store_Analysis.png" alt="SQL Music Store Analysis" class="project-image">
+                    <img src="images/Project6_SQL_Music_Store_Analysis.png" alt="SQL Music Store Analysis" class="project-image" loading="lazy">
                     <div class="project-content">
                         <h3>SQL Music Store Analysis (PostgreSQL)</h3>
                         <p>SQL-based exploratory analysis of a digital music store dataset using joins, CTEs, and window functions.</p>
@@ -198,7 +316,7 @@
                     </div>
                 </div>
                 <div class="project-card project-card-small">
-                    <img src="images/Project7_Maven_Movies_Due_Diligence.png" alt="Maven Movies Acquisition Analysis" class="project-image">
+                    <img src="images/Project7_Maven_Movies_Due_Diligence.png" alt="Maven Movies Acquisition Analysis" class="project-image" loading="lazy">
                     <div class="project-content">
                         <h3>Maven Movies Acquisition Analysis (MySQL)</h3>
                         <p>Simulated acquisition due diligence analysis to evaluate revenue stability, inventory risk, and customer lifetime value.</p>
@@ -210,7 +328,7 @@
                     </div>
                 </div>
                 <div class="project-card project-card-small">
-                    <img src="images/Project8_PAN_Data_Validation.png" alt="PAN Number Validation & Data Quality Analysis" class="project-image">
+                    <img src="images/Project8_PAN_Data_Validation.png" alt="PAN Number Validation & Data Quality Analysis" class="project-image" loading="lazy">
                     <div class="project-content">
                         <h3>PAN Number Validation & Data Quality Analysis</h3>
                         <p>Built a PostgreSQL pipeline to validate and clean PAN numbers using regex, duplicate detection, and data quality checks.</p>
@@ -222,7 +340,7 @@
                     </div>
                 </div>
                 <div class="project-card project-card-small">
-                    <img src="images/Project9_SQL_Walmart_Sales_Analysis.png" alt="Walmart Sales Analysis" class="project-image">
+                    <img src="images/Project9_SQL_Walmart_Sales_Analysis.png" alt="Walmart Sales Analysis" class="project-image" loading="lazy">
                     <div class="project-content">
                         <h3>Walmart Sales Analysis (SQL Server)</h3>
                         <p>Analysed Walmart sales data using SQL to uncover customer behaviour patterns and top-performing products.</p>
@@ -234,7 +352,7 @@
                     </div>
                 </div>
                 <div class="project-card project-card-small">
-                    <img src="images/Project10_Data_Jobs_Market_PowerBI.png" alt="Power BI Data Jobs Market Dashboard" class="project-image">
+                    <img src="images/Project10_Data_Jobs_Market_PowerBI.png" alt="Power BI Data Jobs Market Dashboard" class="project-image" loading="lazy">
                     <div class="project-content">
                         <h3>Power BI Data Jobs Market Dashboard</h3>
                         <p>Built a Power BI dashboard analysing job market trends including salary benchmarks and in-demand data skills.</p>
@@ -298,10 +416,25 @@
         <section id="certifications" class="section">
             <h2>Certifications &amp; Learning</h2>
             <div class="cert-cards">
-                <div class="cert">Coursera – Data Analyst Professional Certificate</div>
-                <div class="cert">edX – SQL for Data Science</div>
-                <div class="cert">Microsoft – Power BI Data Analyst</div>
-                <div class="cert">Ongoing: Advanced Python for Data Analysis</div>
+                <div class="cert">
+                    <strong>SQL for Data Analysis</strong>
+                    <span>Udemy – Jose Portilla</span>
+                </div>
+        
+                <div class="cert">
+                    <strong>Python for Everybody</strong>
+                    <span>Coursera</span>
+                </div>
+        
+                <div class="cert">
+                    <strong>Preparing Data for Analysis with Excel</strong>
+                    <span>Coursera</span>
+                </div>
+        
+                <div class="cert">
+                    <strong>Microsoft Power BI Data Analyst (PL-300)</strong>
+                    <span>Currently Preparing</span>
+                </div>
             </div>
         </section>
 
@@ -318,9 +451,9 @@
             <h2>Contact</h2>
             <p>I'm open to new opportunities and collaborations. Let's connect!</p>
             <div class="contact-icons">
-                <a href="https://linkedin.com/in/<your-profile>" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="https://github.com/<your-username>" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-                <a href="mailto:your.email@example.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/manohark1999" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/ManoharManu1999" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="mailto:manoharmanu.k1999@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
             </div>
         </section>
     </main>

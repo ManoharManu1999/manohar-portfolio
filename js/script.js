@@ -48,3 +48,20 @@ themeToggle.addEventListener('click', () => {
     applyTheme(!isLight);
 });
 
+const reveals = document.querySelectorAll('.section');
+
+window.addEventListener('scroll', () => {
+  reveals.forEach(section => {
+    const top = section.getBoundingClientRect().top;
+    if (top < window.innerHeight - 100) {
+      section.classList.add('active');
+    }
+  });
+});
+
+window.addEventListener("load", () => {
+document.querySelector(".sql").style.width="90%";
+document.querySelector(".python").style.width="80%";
+document.querySelector(".powerbi").style.width="75%";
+document.querySelector(".viz").style.width="85%";
+});
