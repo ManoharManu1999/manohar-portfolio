@@ -51,6 +51,19 @@ function applyTheme(isLight){
         localStorage.setItem('theme','dark');
     }
 
+    // Update skill bars after theme change
+    setTimeout(() => {
+        const sql = document.querySelector(".sql");
+        const python = document.querySelector(".python");
+        const powerbi = document.querySelector(".powerbi");
+        const viz = document.querySelector(".viz");
+
+        if(sql) sql.style.width = "90%";
+        if(python) python.style.width = "80%";
+        if(powerbi) powerbi.style.width = "75%";
+        if(viz) viz.style.width = "85%";
+    }, 100); // Small delay to ensure CSS transition
+
 }
 
 const savedTheme = localStorage.getItem('theme');
