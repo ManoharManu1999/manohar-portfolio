@@ -150,16 +150,6 @@ body.dark {
     border: 1px solid rgba(144, 169, 255, 0.5);
 }
 
-.verify-btn {
-    display: inline-block;
-    margin-top: 10px;
-    font-size: 12px;
-    color: #5b8cff;
-    text-decoration: none;
-    font-weight: 600;
-}
-.verify-btn:hover { text-decoration: underline; }
-
 /* Animations */
 .reveal {
     opacity: 0;
@@ -250,25 +240,6 @@ header.scrolled {
     width: 100%;
 }
 
-.nav-cta {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-}
-
-.btn-sm {
-    padding: 8px 16px;
-    font-size: 13px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: 600;
-}
-
-.nav-cta .btn-primary {
-    background: #5b8cff;
-    color: white;
-}
-
 #theme-toggle {
     background: var(--accent-soft);
     border: none;
@@ -339,283 +310,276 @@ margin-top:20px;
 /* =========================
 NEW HERO DESIGN
 ======================== */
-
-.hero-new{
-display:flex;
-align-items:center;
-padding:120px 40px 60px;
-max-width:1200px;
-margin:auto;
-}
-
-.hero-grid{
-display:grid;
-grid-template-columns:1.2fr 1fr;
-gap:80px;
-align-items:center;
-width:100%;
-}
-
-.hero-top{
-font-size:14px;
-letter-spacing:2px;
-text-transform:uppercase;
-color:#7f8cf0;
-margin-bottom:20px;
-}
-
-.hero-title{
-font-size:64px;
-line-height:1.1;
-font-weight:700;
-color:white;
-margin-bottom:20px;
-}
-
-.hero-title span{
-background:linear-gradient(90deg,#5b8cff,#7f8cf0);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-}
-
-.hero-description{
-font-size:18px;
-color:#aab2c0;
-max-width:500px;
-margin-bottom:30px;
-line-height:1.6;
-}
-
-.hero-buttons {
+/* =========================
+   ENHANCED HERO DESIGN
+   ======================== */
+.hero-new {
     display: flex;
-    gap: 12px;
-    flex-wrap: wrap; /* Prevents breaking on mobile */
+    align-items: center;
+    padding: 160px 40px 100px; /* Increased top padding for better spacing */
+    max-width: 1200px;
+    margin: auto;
+    min-height: 90vh;
 }
 
-.hero-buttons .btn-outline {
-    display: inline-flex;
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 0.8fr; /* Adjusted ratio for better balance */
+    gap: 60px;
     align-items: center;
-    padding: 12px 24px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: 100%;
+}
+
+.hero-top {
+    font-size: 14px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 24px;
+    font-weight: 600;
+}
+
+.hero-title {
+    font-size: 72px; /* Large, bold typography */
+    line-height: 1.05;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 24px;
+}
+
+.hero-title span {
+    display: block; /* Moves the colored text to its own line */
+    background: linear-gradient(90deg, #5b8cff, #7f8cf0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-description {
+    font-size: 18px;
+    color: #aab2c0;
+    max-width: 520px;
+    margin-bottom: 40px;
+    line-height: 1.7;
+}
+
+/* Stat Cards (Right Side) */
+.hero-right {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 32px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateX(-5px);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.stat-card h3 {
+    font-size: 40px;
+    color: #5b8cff;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.stat-card p {
+    color: #aab2c0;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Tech Badges */
+.hero-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.hero-tech span {
+    padding: 6px 14px;
+    font-size: 11px;
+    font-weight: 600;
+    border: 1px solid rgba(127, 140, 240, 0.2);
+    border-radius: 30px;
+    color: #cfd6ff;
+    background: rgba(127, 140, 240, 0.05);
+}
+
+/* Button Refinement */
+.btn-primary {
+    padding: 14px 28px;
+    border-radius: 8px; /* Slightly squarer for a professional look */
+}
+
+.btn-outline {
+    padding: 14px 28px;
     border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
     color: white;
     text-decoration: none;
     transition: 0.3s;
 }
 
-.hero-right{
-display:flex;
-flex-direction:column;
-gap:20px;
+.btn-outline:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: white;
 }
 
-.stat-card{
-background:rgba(255,255,255,0.04);
-padding:28px;
-border-radius:14px;
-border:1px solid rgba(255,255,255,0.08);
-backdrop-filter:blur(10px);
+/* Mobile Responsiveness */
+@media (max-width: 992px) {
+    .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 40px;
+    }
+    .hero-title { font-size: 48px; }
+    .hero-description { margin: 0 auto 30px; }
+    .hero-buttons { justify-content: center; }
+    .hero-right { max-width: 400px; margin: auto; width: 100%; }
 }
-
-.stat-card h3{
-font-size:32px;
-color:#5b8cff;
-margin-bottom:6px;
-}
-
-.stat-card p{
-color:#aab2c0;
-font-size:14px;
-}
-
-.hero-tech{
-display:flex;
-flex-wrap:wrap;
-gap:10px;
-margin-top:10px;
-}
-
-.hero-tech span{
-padding:6px 12px;
-font-size:12px;
-border:1px solid rgba(120,140,255,0.4);
-border-radius:20px;
-color:#cfd6ff;
-background:rgba(120,140,255,0.1);
-}
-
-.profile-img,
-.profile-photo {
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid #3b82f6;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-    transition:transform .3s ease;
-}
-
-.profile-img:hover{
-transform:scale(1.05);
-}
-
-@keyframes gradientMove {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-.light-mode .hero-new{
-background:linear-gradient(135deg,#ffffff,#f1f5f9);
-}
-
-/* =========================================
-   1. CORE BENTO VARIABLES & RESET
-   ========================================= */
-:root {
-    --bg-color: #050505; /* Deep black background from target image */
-    --card-bg: #121212; /* Matte black cards */
-    --accent: #7f8cf0;
-    --muted-text: #888888;
-    --transition: all 0.3s ease;
-}
-
-/* =========================================
-   2. RESTRUCTURED ABOUT & "WHAT I DO"
-   ========================================= */
-.about-flex-container {
+/* About */
+.about-inner {
     display: flex;
-    gap: 40px;
-    align-items: flex-start;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
 }
 
-.profile-side {
-    flex: 1;
-    max-width: 350px;
-}
-
-.profile-photo-large {
-    width: 100%;
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    margin-bottom: 20px;
-    transition: var(--transition);
-}
-
-.profile-bio {
-    color: var(--muted-text);
+.about-text p {
     line-height: 1.6;
-    font-size: 0.95rem;
 }
 
-/* "What I Do" Cards Grid */
-.about-cards-grid {
-    flex: 2;
+/* Skills */
+.skill-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.skill-badge {
+    display: inline-block;
+    background: rgba(129, 145, 245, 0.16);
+    border: 1px solid rgba(144, 164, 255, 0.4);
+    color: var(--text-skill);
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(12, 17, 34, 0.4);
+}
+
+.skill-bars {
+    margin-top: 1rem;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
+    gap: 0.85rem;
+}
+
+.skill-bar p {
+    margin: 0 0 0.25rem;
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--text-skill-bar);
+}
+
+.bar {
+    width: 100%;
+    height: 8px;
+    background: var(--bar-bg);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.sql {
+    width: 90%;
+    background: #3b82f6;
+}
+
+.python {
+    width: 80%;
+    background: #22c55e;
+}
+
+.powerbi {
+    width: 75%;
+    background: #f59e0b;
+}
+
+.viz {
+    width: 85%;
+    background: #8b5cf6;
+}
+
+.skills-chart-container{
+max-width:500px;
+margin:auto;
+margin-top:30px;
+background:rgba(15,23,42,0.6);
+padding:30px;
+border-radius:14px;
+border:1px solid rgba(120,140,255,0.25);
+box-shadow:0 10px 30px rgba(0,0,0,0.4);
+}
+
+.radar-container{
+max-width:520px;
+margin:40px auto;
+padding:30px;
+background:rgba(15,23,42,0.75);
+border-radius:16px;
+border:1px solid rgba(127,140,240,0.25);
+box-shadow:
+0 10px 35px rgba(0,0,0,0.45),
+0 0 20px rgba(127,140,240,0.15);
+transition:0.3s ease;
+}
+
+.radar-container:hover{
+transform:translateY(-4px);
+box-shadow:
+0 18px 45px rgba(0,0,0,0.55),
+0 0 25px rgba(127,140,240,0.35);
+}
+
+/* Tools */
+.tool-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 0.8rem;
+}
+
+.tool-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.45rem 0.9rem;
+    font-size: 0.82rem;
+    border-radius: 999px;
+    background: rgba(128, 143, 250, 0.18);
+    color: var(--text-tool);
+    border: 1px solid rgba(146, 164, 255, 0.35);
+}
+
+/* What I Do */
+.what-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
 }
 
 .what-card {
-    background: var(--card-bg);
-    padding: 30px;
+    background: #0f172a;
+    padding: 1.5rem;
     border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    transition: var(--transition);
-}
-
-.what-card h3 {
-    color: #ffffff;
-    font-size: 1.1rem;
-    margin-bottom: 12px;
-    text-transform: none; /* Keep natural casing for titles */
-}
-
-.what-card p {
-    color: var(--muted-text);
-    font-size: 0.9rem;
-    line-height: 1.5;
-}
-
-.what-card:hover {
-    transform: translateY(-5px);
-    border-color: rgba(127, 140, 240, 0.3);
-    background: #1a1a1a;
-}
-
-/* =========================================
-   3. SKILLS & TOOLS BENTO GRID
-   ========================================= */
-.skills-bento-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 24px;
-    margin-top: 30px;
-}
-
-.skill-category-card {
-    background: var(--card-bg);
-    padding: 24px;
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    transition: var(--transition);
-}
-
-.skill-category-card:hover {
-    transform: translateY(-5px);
-    border-color: rgba(127, 140, 240, 0.3);
-    background: #1a1a1a;
-}
-
-.category-label {
-    display: block;
-    font-size: 11px;
-    letter-spacing: 1.5px;
-    color: #666666;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-    font-weight: 700;
-}
-
-/* Skill Tags / Pills */
-.badge-group {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-}
-
-.skill-tag {
-    display: inline-block;
-    background: #1e1e1e;
-    color: #dddddd;
-    padding: 6px 14px;
-    border-radius: 6px;
-    font-size: 0.85rem;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    transition: var(--transition);
-}
-
-.skill-tag:hover {
-    background: var(--accent);
-    color: #ffffff;
-    border-color: var(--accent);
-}
-
-/* =========================================
-   4. RESPONSIVE ADJUSTMENTS
-   ========================================= */
-@media (max-width: 992px) {
-    .about-flex-container {
-        flex-direction: column;
-        align-items: center;
-    }
-    .profile-side {
-        max-width: 100%;
-        text-align: center;
-    }
-    .skills-bento-grid {
-        grid-template-columns: 1fr;
-    }
+    border: 1px solid rgba(130, 140, 180, 0.3);
 }
 
 /* Workflow */
@@ -799,165 +763,130 @@ margin-right:16px;
 }
 
 /* Experience */
-/* =========================
-   EXPERIENCE BENTO DESIGN
-   ======================== */
-.experience-container {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-}
-
-.job-card {
-    background: #121212;
-    padding: 40px;
-    border-radius: 14px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.job-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 8px;
-}
-
-.job-date {
-    font-size: 12px;
-    color: #666;
-    letter-spacing: 1px;
-}
-
-.company-name {
-    color: var(--accent);
-    font-weight: 600;
-    margin-bottom: 20px;
-}
-
-.job-bullets li {
-    color: #aab2c0;
-    margin-bottom: 12px;
-    line-height: 1.6;
-}
-
-/* Metrics Bento Grid */
-.experience-metrics-grid {
+.industry-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
 }
 
-.metric-bento-card {
-    background: #121212;
-    padding: 32px;
+.industry-card {
+    background: #0f172a;
+    border: 1px solid rgba(120, 140, 255, 0.35);
+    padding: 12px 16px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+}
+
+.comparison-table-wrap {
+    overflow-x: auto;
+    margin-top: 2rem;
     border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    text-align: center;
-}
-
-.metric-bento-card h3 {
-    font-size: 32px;
-    color: #5b8cff; /* Blue accent from target */
-    margin-bottom: 8px;
-}
-
-.metric-bento-card p {
-    font-size: 13px;
-    color: #666;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-/* Skills Transfer Table */
-.skills-transfer-wrap {
-    margin-top: 20px;
-}
-
-.table-label {
-    font-size: 11px;
-    color: #444;
-    letter-spacing: 2px;
-    margin-bottom: 15px;
+    border: 1px solid rgba(130, 140, 180, 0.2);
 }
 
 .comparison-table {
     width: 100%;
     border-collapse: collapse;
-    background: #0a0a0a;
+    background: rgba(15, 23, 42, 0.4);
 }
 
-.comparison-table th, .comparison-table td {
-    padding: 16px;
-    text-align: left;
-    border-bottom: 1px solid #1a1a1a;
-    font-size: 14px;
-}
-
-.comparison-table th {
-    color: #444;
-    font-weight: 700;
-}
-
-.table-label {
-    font-size: 14px;
-    color: #ffffff; /* Make white and bright */
-    font-weight: 700;
-    letter-spacing: 2px;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-}
-
-.comparison-table th {
-    color: #5b8cff !important; /* Blue headers */
-    font-size: 12px;
-    letter-spacing: 1px;
-    padding-bottom: 15px;
-}
-
+.comparison-table th,
 .comparison-table td {
-    color: #ffffff; /* White content */
-    padding: 12px 0;
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid rgba(130, 140, 180, 0.1);
 }
 
-.comparison-table td:last-child {
-    color: #5b8cff; /* Highlight data skills in blue */
-    font-weight: 600;
+.comparison-table th {
+    background: rgba(127, 140, 240, 0.1);
+    color: var(--accent);
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
 }
 
-/* Certifications Grid */
-.cert-bento-grid {
+.experience-card {
+    background: rgba(11, 18, 34, 0.9);
+    border: 1px solid rgba(120, 140, 255, 0.35);
+    padding: 1.5rem;
+    border-radius: 14px;
+    margin-bottom: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.experience-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 6px;
+    color: var(--text-exp-title);
+}
+
+.experience-card p {
+    color: var(--text-exp-desc);
+    margin-bottom: 10px;
+}
+
+.experience-card ul {
+    padding-left: 18px;
+    line-height: 1.6;
+}
+
+.experience-card li {
+    margin-bottom: 6px;
+}
+
+.experience-metrics {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
 }
 
-.cert-card {
-    background: #121212;
-    padding: 24px;
+.metric-card {
+    background: #0f172a;
+    padding: 1rem;
     border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: center;
+    border: 1px solid rgba(140, 150, 255, 0.35);
 }
 
-.cert-card strong {
+.metric-card strong {
+    font-size: 1.4rem;
     display: block;
-    color: #fff;
-    margin-bottom: 4px;
+    color: #7f8cf0;
 }
 
-.cert-card span {
-    color: #666;
-    font-size: 13px;
+.metric-card span {
+    font-size: 0.9rem;
+    color: #c3c9db;
 }
 
-.cert-card.prepare {
-    border-style: dashed;
-    border-color: rgba(127, 140, 240, 0.3);
+/* Certifications */
+.cert-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
 }
 
-/* Responsive Fixes */
-@media (max-width: 768px) {
-    .experience-metrics-grid { grid-template-columns: 1fr; }
-    .job-header { flex-direction: column; align-items: flex-start; }
+.cert {
+    background: rgba(11, 18, 34, 0.95);
+    border: 1px solid rgba(103, 117, 181, 0.45);
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
+    color: var(--text-cert);
+}
+
+.cert strong {
+    display: block;
+    font-size: 0.98rem;
+    margin-bottom: 0.3rem;
+    color: var(--text-cert-strong);
+}
+
+.cert span {
+    font-size: 0.84rem;
+    color: var(--text-cert-span);
 }
 
 /* GitHub */
@@ -1105,14 +1034,4 @@ body.dark .project-card:hover {
 #back-to-top.show {
     opacity: 1;
     visibility: visible;
-}
-
-.highlight-text {
-    color: #5b8cff; /* Bright blue for numbers and years */
-    font-weight: 700;
-}
-
-.highlight-title {
-    font-size: 1.5rem;
-    margin-bottom: 5px;
 }
