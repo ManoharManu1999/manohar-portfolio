@@ -101,22 +101,20 @@ document.addEventListener("DOMContentLoaded", () => {
     const speed = 200;
 
     counters.forEach(counter => {
-        // Use the raw data-target number
-        const target = +counter.getAttribute('data-target').replace(/,/g, ''); 
-        
+        const target = +counter.getAttribute('data-target');
         const updateCount = () => {
-            const currText = counter.innerText.replace(/,/g, '').replace(/[+%]/g, '');
-            const count = +currText;
+            const count = +counter.innerText.replace(/,/g, ''); // Remove commas for calculation
             const inc = target / speed;
 
             if (count < target) {
+                // Update the number only
                 counter.innerText = Math.ceil(count + inc).toLocaleString();
                 setTimeout(updateCount, 1);
             } else {
-                // Final state: Add symbols based on specific targets
-                if (target === 4 || target === 10 || target === 30000) {
+                // Final state: Format number and append symbol based on the target value
+                if (target === 30000 || target === 10 || target === 3) {
                     counter.innerText = target.toLocaleString() + "+";
-                } else if (target === 98 || target === 30) {
+                } else if (target === 98 || target === 30 || target === 20) {
                     counter.innerText = target + "%";
                 } else {
                     counter.innerText = target.toLocaleString();
@@ -125,7 +123,6 @@ document.addEventListener("DOMContentLoaded", () => {
         };
         updateCount();
     });
-}
 }
     /* ===============================
        7. Radar Chart Initialization
