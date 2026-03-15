@@ -4,18 +4,19 @@ document.addEventListener("DOMContentLoaded", () => {
    Smooth Scroll Navigation
 ================================ */
 
-document.querySelectorAll('.nav-links a').forEach(link => {
-  link.addEventListener('click', e => {
+navLinks.forEach(link => {
+link.addEventListener('click', e => {
 
-    const href = link.getAttribute("href");
+const targetId = link.getAttribute('href');
 
-    if (href.startsWith("#")) {
-      e.preventDefault();
-      const target = document.querySelector(href);
-      target.scrollIntoView({ behavior: "smooth" });
-    }
+if(targetId.startsWith("#")){
+e.preventDefault();
+document.querySelector(targetId).scrollIntoView({
+behavior:'smooth'
+});
+}
 
-  });
+});
 });
 
 /* ===============================
