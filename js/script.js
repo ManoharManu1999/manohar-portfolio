@@ -29,33 +29,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     /* ===============================
-       3. Theme Toggle & Persistence
-    ================================ */
-    const themeToggle = document.getElementById('theme-toggle');
-
-    function applyTheme(isLight) {
-        if (isLight) {
-            document.body.classList.add('light-mode');
-            themeToggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
-            localStorage.setItem('theme', 'light');
-        } else {
-            document.body.classList.remove('light-mode');
-            themeToggle.innerHTML = '<i class="fa-solid fa-moon"></i>';
-            localStorage.setItem('theme', 'dark');
-        }
-    }
-
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'light') applyTheme(true);
-    else if (savedTheme === 'dark') applyTheme(false);
-    else applyTheme(window.matchMedia('(prefers-color-scheme: light)').matches);
-
-    themeToggle.addEventListener('click', () => {
-        const isLight = document.body.classList.contains('light-mode');
-        applyTheme(!isLight);
-    });
-
-    /* ===============================
        4. Intersection Observer (Scroll Animations)
     ================================ */
     const observerOptions = { threshold: 0.15 };
