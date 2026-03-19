@@ -1,62 +1,148 @@
 document.addEventListener("DOMContentLoaded", () => {
-    /* ===============================
-       1. Smooth Scroll Navigation
-    ================================ */
+
+    /* =========================================
+       01. MOBILE HAMBURGER MENU
+       ========================================= */
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+
+    // Safety check to ensure elements exist before adding events
+    if (hamburger && navMenu) {
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            
+            // Toggle icon between hamburger (☰) and close (X)
+            if (navMenu.classList.contains('active')) {
+                hamburger.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+            } else {
+                hamburger.innerHTML = '<i class="fa-solid fa-bars"></i>';
+            }
+        });
+
+        // Close the menu automatically when a link or button is clicked
+        document.querySelectorAll('.nav-links a, .nav-cta a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                hamburger.innerHTML = '<i class="fa-solid fa-bars"></i>';
+            });
+        });
+    }
+
+    /* =========================================
+       02. SMOOTH SCROLL NAVIGATION (WITH OFFSET)
+       ========================================= */
     const navLinks = document.querySelectorAll('.nav-links a');
+    
     navLinks.forEach(link => {
         link.addEventListener('click', e => {
             const targetId = link.getAttribute('href');
-            if (targetId.startsWith("#")) {
+            
+            // Only execute if it's an anchor link pointing to an ID
+            if (targetId && targetId.startsWith("#")) {
                 e.preventDefault();
                 const targetElement = document.querySelector(targetId);
+                
                 if (targetElement) {
-                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                    // Calculates header height so it doesn't overlap the section title
+                    const headerHeight = document.getElementById('header').offsetHeight;
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.scrollY - headerHeight;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
                 }
             }
         });
     });
 
-    /* ===============================
-       2. Header Scroll Effect
-    ================================ */
+    /* =========================================
+       03. HEADER SCROLL EFFECT
+       ========================================= */
     const header = document.getElementById('header');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
-    });
+    
+    if (header) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    }
 
-    /* ===============================
-       4. Intersection Observer (Scroll Animations)
-    ================================ */
-    const observerOptions = { threshold: 0.15 };
+    /* =========================================
+       04. NUMBER COUNTER ANIMATION
+       ========================================= */
+    function animateCounters() {
+        const counters = document.querySelectorAll('.counter');
+        const speed = 200; // The lower the number, the faster the count
 
-    const observer = new IntersectionObserver((entries) => {
+        counters.forEach(counter => {
+            // Prevent re-animating if already completed
+            if (counter.classList.contains('animated')) return;
+
+            const target = +counter.getAttribute('data-target');
+            
+            const updateCount = () => {
+                const count = +counter.innerText;
+                const inc = target / speed;
+                
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + inc);
+                    setTimeout(updateCount, 15); // Refresh rate
+                } else {
+                    counter.innerText = target;
+                    counter.classList.add('animated'); // Mark as finished
+                }
+            };
+            
+            updateCount();
+        });
+    }
+
+    /* =========================================
+       05. SCROLL REVEAL ANIMATIONS (OBSERVER)
+       ========================================= */
+    const observerOptions = { 
+        threshold: 0.15,
+        rootMargin: "0px 0px -50px 0px" // Triggers slightly before coming into full view
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
+                // Add active class to trigger CSS fade-in
                 entry.target.classList.add('active');
 
-                // Trigger specific animations based on ID
-                if (entry.target.id === 'skills') {
-                    animateSkillBars();
-                    loadRadarChart();
-                }
+                // Trigger number counters when Hero or Experience sections appear
                 if (entry.target.id === 'experience' || entry.target.id === 'hero') {
                     animateCounters();
                 }
+
+                // Trigger legacy animations if those elements exist
+                if (entry.target.id === 'skills') {
+                    if (typeof animateSkillBars === 'function') animateSkillBars();
+                    if (typeof loadRadarChart === 'function') loadRadarChart();
+                }
                 
+                // Stop observing once animated to save memory
                 observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
 
-    document.querySelectorAll('.reveal, .hero-new').forEach(el => observer.observe(el));
+    // Target all elements with the 'reveal' class, plus the hero section
+    document.querySelectorAll('.reveal, .hero-new, #hero').forEach(el => {
+        observer.observe(el);
+    });
 
-    /* ===============================
-       5. Skill Bar Animation
-    ================================ */
+    /* =========================================
+       06. OPTIONAL/LEGACY CHART ANIMATIONS
+       ========================================= */
+    // Note: Kept intact for future use if you ever revert to progress bars or charts.
+    
     function animateSkillBars() {
         const skills = { ".sql": "90%", ".python": "80%", ".powerbi": "75%", ".viz": "85%" };
         for (const [selector, width] of Object.entries(skills)) {
@@ -65,35 +151,11 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    /* ===============================
-       6. Number Counter Animation
-    ================================ */
-    function animateCounters() {
-        const counters = document.querySelectorAll('.counter');
-        const speed = 200;
-
-        counters.forEach(counter => {
-            const target = +counter.getAttribute('data-target');
-            const updateCount = () => {
-                const count = +counter.innerText;
-                const inc = target / speed;
-                if (count < target) {
-                    counter.innerText = Math.ceil(count + inc);
-                    setTimeout(updateCount, 1);
-                } else {
-                    counter.innerText = target;
-                }
-            };
-            updateCount();
-        });
-    }
-
-    /* ===============================
-       7. Radar Chart Initialization
-    ================================ */
     function loadRadarChart() {
         const ctx = document.getElementById("skillsRadar");
-        if (!ctx || window.myRadarChart) return; // Prevent double initialization
+        
+        // Prevent console error if canvas doesn't exist or Chart.js isn't loaded
+        if (!ctx || typeof Chart === 'undefined' || window.myRadarChart) return; 
 
         const isLight = document.body.classList.contains('light-mode');
         const labelColor = isLight ? "#1e293b" : "#cfd6ff";
@@ -129,29 +191,5 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
-});
 
-/* ===============================
-   MOBILE HAMBURGER MENU
-================================ */
-const hamburger = document.getElementById('hamburger');
-const navMenu = document.getElementById('nav-menu');
-
-hamburger.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-    
-    // Changes the icon from ☰ to X when open
-    if (navMenu.classList.contains('active')) {
-        hamburger.innerHTML = '<i class="fa-solid fa-xmark"></i>';
-    } else {
-        hamburger.innerHTML = '<i class="fa-solid fa-bars"></i>';
-    }
-});
-
-// Close the menu automatically when a link is clicked
-document.querySelectorAll('.nav-links a, .nav-cta a').forEach(link => {
-    link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        hamburger.innerHTML = '<i class="fa-solid fa-bars"></i>';
-    });
 });
