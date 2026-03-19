@@ -130,3 +130,28 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+
+/* ===============================
+   MOBILE HAMBURGER MENU
+================================ */
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('nav-menu');
+
+hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+    
+    // Changes the icon from ☰ to X when open
+    if (navMenu.classList.contains('active')) {
+        hamburger.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+    } else {
+        hamburger.innerHTML = '<i class="fa-solid fa-bars"></i>';
+    }
+});
+
+// Close the menu automatically when a link is clicked
+document.querySelectorAll('.nav-links a, .nav-cta a').forEach(link => {
+    link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+        hamburger.innerHTML = '<i class="fa-solid fa-bars"></i>';
+    });
+});
