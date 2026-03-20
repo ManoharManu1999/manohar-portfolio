@@ -1107,6 +1107,12 @@ body.dark .project-card:hover {
     margin-bottom: 30px;
 }
 
+.availability {
+  color: #7f8cf0;
+  font-weight: 600;
+  margin: 10px 0 20px;
+}
+
 .contact-location {
     display: inline-flex; 
     align-items: center;
