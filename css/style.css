@@ -157,6 +157,7 @@ body.dark {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    gap: 8px;
     padding: 10px 20px;
     font-size: 0.9rem;
     border-radius: 30px;
@@ -180,6 +181,7 @@ body.dark {
     color: var(--text-secondary);
     display: inline-flex;
     align-items: center;
+    gap: 8px; /* Adds perfect spacing between icon and text */
     padding: 12px 24px;
     border-radius: 8px;
     text-decoration: none;
@@ -1078,11 +1080,12 @@ body.dark .project-card:hover {
 /* =========================================
    12. CONTACT & FOOTER SECTION
    ========================================= */
+
 .contact-cta-card {
     background: transparent; 
     border: none; 
     box-shadow: none; 
-    padding: 60px 20px 20px;
+    padding: 10px 20px 20px; /* Changed from 60px to 10px to close the huge gap! */
     text-align: center;
     max-width: 700px; 
     margin: 0 auto;
