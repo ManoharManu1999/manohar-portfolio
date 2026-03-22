@@ -191,5 +191,27 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
+/* =========================================
+       07. BACK TO TOP BUTTON
+       ========================================= */
+    const backToTopBtn = document.getElementById('back-to-top');
 
+    if (backToTopBtn) {
+        // Show the button when the user scrolls down 300px
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+        });
+
+        // Smoothly scroll back to the very top when clicked
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
 });
